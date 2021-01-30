@@ -2,6 +2,7 @@ package com.example.ttsbutton
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+//import android.util.Log
 import android.speech.tts.TextToSpeech
 import android.widget.Button
 import android.widget.EditText
@@ -15,17 +16,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        button = findViewById(R.id.button)
-        text = findViewById(R.id.editTextTextMultiLine)
-
-//        button.setOnClickListener { text.setText("hello") }
+//        button = findViewById(R.id.button)
+        button = findViewById<Button>(R.id.button)
+        text = findViewById<EditText>(R.id.editTextTextMultiLine)
 
         tts = TextToSpeech(this, this)
 
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
     }
 
     override fun onInit(status: Int) {
